@@ -14,6 +14,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
+import Link from "next/link";
 
 export default function ButtonAppBar() {
   const [drawer, setDrawer] = useState(false);
@@ -59,25 +60,31 @@ export default function ButtonAppBar() {
           <nav aria-label="main mailbox folders">
             <List>
               <ListItem disablePadding>
-                <ListItemButton component="a" href="/">
-                  <ListItemIcon>
-                    <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Index" />
-                </ListItemButton>
+                <Link passHref={true} href="/">
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Index" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton component="a" href="/about">
-                  <ListItemIcon>
-                    <DraftsIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="About" />
-                </ListItemButton>
+                <Link passHref={true} href="/about">
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <DraftsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="About" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton component="a" href="/empty">
-                  <ListItemText primary="Empty" />
-                </ListItemButton>
+                <Link passHref={true} href="/empty">
+                  <ListItemButton>
+                    <ListItemText primary="Empty" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
             </List>
           </nav>
